@@ -29,11 +29,13 @@ class Triangle
     x+y > z && x+z > y && y+z > x
   end
 
-  def valid_triangle
-    raise TriangleError unless sides_greater_than_zero? & valid_triangle_inequality? 
-
-  end
+  
 
   class TriangleError < StandardError
+
+    def valid_triangle
+      raise TriangleError unless sides_greater_than_zero? & valid_triangle_inequality? 
+  
+    end
   end
 end
